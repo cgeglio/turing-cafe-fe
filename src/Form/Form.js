@@ -7,6 +7,10 @@ class Form extends Component {
     this.state = {name: '', date: '', time: '', number: ''}
   }
 
+  handleChange = event => {
+    this.setState({[event.target.name]: event.target.value})
+  }
+
   render() {
     return (
       <form>
