@@ -35,4 +35,15 @@ describe('Form', () => {
     expect(wrapper.state()).toEqual(expected);
   });
 
+  it('should call addReservation when the submit button is clicked', () => {
+    wrapper.instance().addReservation = jest.fn();
+    wrapper.instance().forceUpdate();
+    const mockEvent = { preventDefault: jest.fn() };
+
+    wrapper.find('button').simulate('click', mockEvent);
+    expect(wrapper.instance().addReservation).toHaveBeenCalledWith(mockEvent);
+  });
+
+
+
 });

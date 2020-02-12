@@ -8,6 +8,7 @@ const Card = ({ reservation, removeReservation }) => {
       <h2>{reservation.date}</h2>
       <h2>{reservation.time}</h2>
       <h2>{reservation.number}</h2>
+      <button onClick={() => {removeReservation(reservation.id)}}>Remove</button>
     </article>
   )
 }

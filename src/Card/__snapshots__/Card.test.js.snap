@@ -14,5 +14,10 @@ exports[`Card should match the snapshot 1`] = `
   <h2>
     12
   </h2>
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
 </article>
 `;
