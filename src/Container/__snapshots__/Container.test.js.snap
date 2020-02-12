@@ -2,7 +2,7 @@
 
 exports[`Container should match the snapshot 1`] = `
 <Card
-  key="1"
+  key="Christie-12/29-"
   removeReservation={[MockFunction]}
   reservation={
     Object {

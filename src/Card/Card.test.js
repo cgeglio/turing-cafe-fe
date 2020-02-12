@@ -28,10 +28,9 @@ describe('Card', () => {
 
   it('should call removeReservation when the delete button is clicked', () => {
     const mockEvent = { preventDefault: jest.fn() };
-    const expected = mockReservation.id;
 
     wrapper.find('button').simulate('click', mockEvent);
-    expect(mockRemoveReservation).toHaveBeenCalledWith(expected);
+    expect(mockRemoveReservation).toHaveBeenCalledWith(mockReservation);
   });
 
 

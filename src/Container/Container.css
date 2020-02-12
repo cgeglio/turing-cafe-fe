@@ -1,0 +1,28 @@
+section {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+  width: 80%;
+}
+
+.sorter {
+  margin: 10px 40%;
+}
+
+.sort-btn {
+  border: 3px solid #028080;
+  background-color: #028080;
+  color: white;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 70%;
+}
+
+.sort-btn:hover {
+  border: 3px solid #028080;
+  background-color: white;
+  color: #028080;
+}

@@ -46,6 +46,20 @@ class App extends Component {
         .catch(error => console.log('Error deleting'))
     }
 
+    sortReservations = order => {
+      if (order === 'earliest') {
+        let earliest = this.state.reservations.sort((a, b) => {
+          return parseInt(a.date.split('/')[0]) - parseInt(b.date.split('/')[0]);
+        })
+        this.setState({reservations: earliest})
+      } else if (order === 'latest') {
+        let latest = this.state.reservations.sort((a, b) => {
+          return parseInt(b.date.split('/')[0]) - parseInt(a.date.split('/')[0]);
+        })
+        this.setState({reservations: latest})
+      }
+    }
+
   render() {
     return (
       <div className="App">
@@ -55,12 +69,11 @@ class App extends Component {
             addReservation={this.addReservation}
           />
         </div>
-        <div className='resy-container'>
-          <Container
-            removeReservation={this.removeReservation}
-            reservations={this.state.reservations}
-          />
-        </div>
+        <Container
+          sortReservations={this.sortReservations}
+          removeReservation={this.removeReservation}
+          reservations={this.state.reservations}
+        />
       </div>
   )}
 }
