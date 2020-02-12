@@ -6,7 +6,7 @@ import { shallow } from 'enzyme';
 describe('Card', () => {
   let wrapper;
   let mockReservation;
-  let mockAddReservation = jest.fn();
+  let mockRemoveReservation = jest.fn();
 
   beforeEach(() => {
     mockReservation = {
@@ -18,7 +18,7 @@ describe('Card', () => {
     }
     wrapper = shallow(<Card
       reservation={mockReservation}
-      addReservation={mockAddReservation}
+      removeReservation={mockRemoveReservation}
     />);
   });
 

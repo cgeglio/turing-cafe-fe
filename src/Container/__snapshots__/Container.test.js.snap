@@ -3,6 +3,7 @@
 exports[`Container should match the snapshot 1`] = `
 <Card
   key="1"
+  removeReservation={[MockFunction]}
   reservation={
     Object {
       "date": "12/29",

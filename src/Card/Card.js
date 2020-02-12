@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ reservation, addReservation }) => {
+const Card = ({ reservation, removeReservation }) => {
   return (
     <article>
       <h2>{reservation.name}</h2>
