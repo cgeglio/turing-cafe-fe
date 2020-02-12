@@ -6,7 +6,7 @@ const Container = ({ reservations, removeReservation }) => {
   return reservations.map(reservation => {
     return (
     <Card
-      key={reservation.id}
+      key={`${reservation.name}-${reservation.date}-`}
       reservation={reservation}
       removeReservation={removeReservation}
     />

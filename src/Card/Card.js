@@ -5,10 +5,10 @@ const Card = ({ reservation, removeReservation }) => {
   return (
     <article>
       <h2>{reservation.name}</h2>
-      <h2>{reservation.date}</h2>
-      <h2>{reservation.time}</h2>
-      <h2>{reservation.number}</h2>
-      <button onClick={() => {removeReservation(reservation.id)}}>Remove</button>
+      <h3>{reservation.date}</h3>
+      <h3>{reservation.time}</h3>
+      <h3>Number of guests: {reservation.number}</h3>
+      <button className="cancel-btn" onClick={() => {removeReservation(reservation)}}>Cancel</button>
     </article>
   )
 }

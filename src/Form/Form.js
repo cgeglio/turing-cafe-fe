@@ -13,7 +13,7 @@ class Form extends Component {
 
   addReservation = event => {
     event.preventDefault();
-    this.props.addReservation({id: Date.now(), name: this.state.name, date: this.state.date, time: this.state.time, number: this.state.number})
+    this.props.addReservation({name: this.state.name, date: this.state.date, time: this.state.time, number: this.state.number})
     this.setState({name: '', date: '', time: '', number: ''});
   }
 
@@ -48,7 +48,7 @@ class Form extends Component {
           value={this.state.number}
           onChange={this.handleChange}
         />
-        <button onClick={this.addReservation}>Submit</button>
+        <button className="submit-btn" onClick={this.addReservation}>Submit</button>
       </form>
     )
   }
