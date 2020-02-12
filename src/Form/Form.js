@@ -11,6 +11,12 @@ class Form extends Component {
     this.setState({[event.target.name]: event.target.value})
   }
 
+  addReservation = event => {
+    event.preventDefault();
+    this.props.addReservation({id: Date.now(), name: this.state.name, date: this.state.date, time: this.state.time, number: this.state.number})
+    this.setState({name: '', date: '', time: '', number: ''});
+  }
+
   render() {
     return (
       <form>
@@ -23,14 +29,14 @@ class Form extends Component {
         />
         <input
           type="text"
-          placeholder="Date..."
+          placeholder="01/01"
           name="date"
           value={this.state.date}
           onChange={this.handleChange}
         />
         <input
           type="text"
-          placeholder="Time..."
+          placeholder="12:00"
           name="time"
           value={this.state.time}
           onChange={this.handleChange}
@@ -42,7 +48,7 @@ class Form extends Component {
           value={this.state.number}
           onChange={this.handleChange}
         />
-        <button>Submit</button>
+        <button onClick={this.addReservation}>Submit</button>
       </form>
     )
   }

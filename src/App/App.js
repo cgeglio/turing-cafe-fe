@@ -16,11 +16,11 @@ class App extends Component {
     }
 
     addReservation = reservation => {
-      // post + set state
+      this.setState({reservations: [...this.state.reservations, reservation]})
     }
 
     removeReservation = reservationId => {
-      // delete + set state
+      this.setState({reservations: this.state.reservations.filter(reservation => reservation.id !== reservationId)})
     }
 
   render() {
