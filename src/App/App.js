@@ -13,6 +13,7 @@ class App extends Component {
     return fetch('http://localhost:3001/api/v1/reservations')
       .then(response => response.json())
       .then(reservations => this.setState({reservations: reservations}))
+      .catch(error => console.log('Error fetching'))
     }
 
     addReservation = reservation => {
@@ -30,17 +31,19 @@ class App extends Component {
                 throw Error('Error posting')
               }
               return response.json()})
-        .then(reservationData => this.setState({reservations: [...this.state.reservations, reservation]}))
+        .then(reservationData => this.setState({reservations: [...this.state.reservations, reservationData]}))
+        .catch(error => console.log('Error posting'))
     }
 
-    removeReservation = reservationId => {
-      return fetch(`http://localhost:3001/api/v1/reservations/${reservationId}`, {method: 'DELETE'})
+    removeReservation = reservation => {
+      return fetch(`http://localhost:3001/api/v1/reservations/${reservation.id}`, {method: 'DELETE'})
         .then(response => {
           if(!response.ok) {
             throw Error('Error deleting')
           }
           return response.json()})
         .then(reservationData => this.setState({reservations: reservationData}))
+        .catch(error => console.log('Error deleting'))
     }
 
   render() {
