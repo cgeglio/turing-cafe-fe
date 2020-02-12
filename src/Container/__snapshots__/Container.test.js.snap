@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container should match the snapshot 1`] = `
+<Card
+  key="1"
+  reservation={
+    Object {
+      "date": "12/29",
+      "id": 1,
+      "name": "Christie",
+      "number": 12,
+      "time": "7:00",
+    }
+  }
+/>
+`;
