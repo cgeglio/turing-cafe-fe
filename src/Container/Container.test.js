@@ -7,6 +7,7 @@ describe('Container', () => {
   let wrapper;
   let mockReservations;
   let mockRemoveReservation = jest.fn();
+  let mockSortReservations = jest.fn()
 
   beforeEach(() => {
     mockReservations = [{
@@ -19,6 +20,7 @@ describe('Container', () => {
     wrapper = shallow(<Container
       reservations={mockReservations}
       removeReservation={mockRemoveReservation}
+      sortReservations={mockSortReservations}
     />);
   });
 
