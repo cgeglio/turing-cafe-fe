@@ -4,7 +4,13 @@ import Card from '../Card/Card.js'
 
 const Container = ({ reservations, addReservation }) => {
   return reservations.map(reservation => {
-    return <Card reservation={reservation} addReservation={addReservation}/>
+    return (
+    <Card
+      key={reservation.id}
+      reservation={reservation}
+      addReservation={addReservation}
+    />
+    )
   })
 }
 
