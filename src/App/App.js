@@ -34,7 +34,13 @@ class App extends Component {
     }
 
     removeReservation = reservationId => {
-      this.setState({reservations: this.state.reservations.filter(reservation => reservation.id !== reservationId)})
+      return fetch(`http://localhost:3001/api/v1/reservations/${reservationId}`, {method: 'DELETE'})
+        .then(response => {
+          if(!response.ok) {
+            throw Error('Error deleting')
+          }
+          return response.json()})
+        .then(reservationData => this.setState({reservations: reservationData}))
     }
 
   render() {
